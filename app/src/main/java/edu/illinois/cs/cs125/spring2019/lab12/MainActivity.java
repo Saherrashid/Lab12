@@ -32,13 +32,16 @@ public final class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        findViewById(R.id.Lookup_address).setOnClickListener(v -> {
+            startAPICall("192.17.96.8");
+        });
 
         // Set up the queue for our API requests
         requestQueue = Volley.newRequestQueue(this);
 
         setContentView(R.layout.activity_main);
 
-        startAPICall("192.17.96.8");
+        //startAPICall("192.17.96.8");
     }
 
     /**
