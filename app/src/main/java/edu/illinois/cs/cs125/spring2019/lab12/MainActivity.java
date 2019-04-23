@@ -29,7 +29,8 @@ public final class MainActivity extends AppCompatActivity {
      *
      * @param savedInstanceState unused
      */
-    @Override
+    //@Override
+    /*
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         findViewById(R.id.Lookup_address).setOnClickListener(v -> {
@@ -43,6 +44,7 @@ public final class MainActivity extends AppCompatActivity {
 
         //startAPICall("192.17.96.8");
     }
+    */
 
     /**
      * Run when this activity is no longer visible.
