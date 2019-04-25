@@ -30,21 +30,19 @@ public final class MainActivity extends AppCompatActivity {
      * @param savedInstanceState unused
      */
     //@Override
-    /*
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        findViewById(R.id.Lookup_address).setOnClickListener(v -> {
-            startAPICall("192.17.96.8");
-        });
-
-        // Set up the queue for our API requests
-        requestQueue = Volley.newRequestQueue(this);
+//        findViewById(R.id.Lookup_address).setOnClickListener(v -> {
+//            startAPICall("192.17.96.8");
+//        });
+//
+//        // Set up the queue for our API requests
+//        requestQueue = Volley.newRequestQueue(this);
 
         setContentView(R.layout.activity_main);
 
         //startAPICall("192.17.96.8");
     }
-    */
 
     /**
      * Run when this activity is no longer visible.
