@@ -7,4 +7,7 @@
     <string name="searcher">Search</string>
     <string name="the_string_the_country_almanac">The @string/the_country_almanac</string>
     <string name="the_country_s_almanac">The Country\'s Almanac</string>
+    <string name="search_again">Search Again</string>
+    <string name="back">Button</string>
+    <string name="goback">BACK</string>
 </resources>

@@ -3,6 +3,8 @@ package edu.illinois.cs.cs125.spring2019.lab12;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.EditText;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -13,6 +15,10 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+//import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 
 /**
  * Main class for our UI design lab.
@@ -38,12 +44,27 @@ public final class MainActivity extends AppCompatActivity {
 //
 //        // Set up the queue for our API requests
 //        requestQueue = Volley.newRequestQueue(this);
-
+        EditText input = (EditText) findViewById(R.id.searchbox);
+        String inputName = input.getText().toString();
         setContentView(R.layout.activity_main);
+
+        findViewById(R.id.searcher).setOnClickListener(v -> {
+            findViewById(R.id.searcher).setVisibility(View.GONE);
+            findViewById(R.id.again).setVisibility(View.VISIBLE);
+            findViewById(R.id.flag).setVisibility(View.INVISIBLE);
+            findViewById(R.id.Back).setVisibility(View.VISIBLE);
+        });
+        findViewById(R.id.Back).setOnClickListener(v -> {
+            findViewById(R.id.searcher).setVisibility(View.VISIBLE);
+            findViewById(R.id.again).setVisibility(View.GONE);
+            findViewById(R.id.flag).setVisibility(View.VISIBLE);
+            findViewById(R.id.Back).setVisibility(View.GONE);
+        });
+
+
 
         //startAPICall("192.17.96.8");
     }
-
     /**
      * Run when this activity is no longer visible.
      */
@@ -94,3 +115,4 @@ public final class MainActivity extends AppCompatActivity {
         } catch (JSONException ignored) { }
     }
 }
+
