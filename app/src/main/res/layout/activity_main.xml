@@ -19,6 +19,13 @@
         android:textStyle="bold"
         android:visibility="visible" />
 
+    <TextView
+        android:id="@+id/information"
+        android:layout_width="453dp"
+        android:layout_height="389dp"
+        android:text="@string/textview"
+        android:visibility="gone" />
+
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/flag"
         android:layout_width="match_parent"

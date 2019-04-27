@@ -53,12 +53,14 @@ public final class MainActivity extends AppCompatActivity {
             findViewById(R.id.again).setVisibility(View.VISIBLE);
             findViewById(R.id.flag).setVisibility(View.INVISIBLE);
             findViewById(R.id.Back).setVisibility(View.VISIBLE);
+            findViewById(R.id.information).setVisibility(View.VISIBLE);
         });
         findViewById(R.id.Back).setOnClickListener(v -> {
             findViewById(R.id.searcher).setVisibility(View.VISIBLE);
             findViewById(R.id.again).setVisibility(View.GONE);
             findViewById(R.id.flag).setVisibility(View.VISIBLE);
             findViewById(R.id.Back).setVisibility(View.GONE);
+            findViewById(R.id.information).setVisibility(View.GONE);
         });
 
 

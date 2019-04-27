@@ -10,4 +10,5 @@
     <string name="search_again">Search Again</string>
     <string name="back">Button</string>
     <string name="goback">BACK</string>
+    <string name="textview">TextView</string>
 </resources>
