@@ -13,4 +13,7 @@
     <string name="textview">TextView</string>
     <string name="enter_word">Enter Word</string>
     <string name="button">(Button)</string>
+    <string name="enter_your_word">Enter Your Word</string>
+    <string name="search_your_word">Search Your Word</string>
+    <string name="definition">Definition</string>
 </resources>
