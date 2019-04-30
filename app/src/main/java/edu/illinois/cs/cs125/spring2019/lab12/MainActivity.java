@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 url = dictionaryEntries(input);
                 request.execute(url);
             }
-            public void onClick(View view) {
+            public void onClick(View name) {
                 findViewById(R.id.searcher).setOnClickListener(v -> {
                     Vibrator z = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                     z.vibrate(500);
