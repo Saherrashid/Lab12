@@ -111,8 +111,7 @@ public class Request extends AsyncTask<String, Integer, String> {
 
             definition = de.getString(0);
             if (definition == null) {
-                textView.setText("Definition Is Not Available")
-                textView.setText(input.toUpperCase() + "-" + definition);
+                textView.setText("Definition Is Not Available");
             } else {
                 textView.setText(input.toUpperCase() + "-" + definition);
             }
