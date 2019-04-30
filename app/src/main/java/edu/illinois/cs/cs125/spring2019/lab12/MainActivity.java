@@ -32,10 +32,10 @@ public class MainActivity extends AppCompatActivity {
         button = findViewById(R.id.searcher);
         editText = findViewById(R.id.editText);
         textView = findViewById(R.id.textview);
-        findViewById(R.id.searcher).setOnClickListener(v -> {
-            Vibrator z = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-            z.vibrate(500);
-        });
+//        findViewById(R.id.searcher).setOnClickListener(v -> {
+//            Vibrator z = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+//            z.vibrate(500);
+//        });
     }
 
             public void onClick(View view) {
