@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 String input = editText.getText().toString();
                 Request request = new Request(this, textView, input);
                 caller = dictionaryEntries(input);
-                request.execute(caller;
+                request.execute(caller);
                 findViewById(R.id.searcher).setOnClickListener(v -> {
                     Vibrator z = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                     z.vibrate(500);
