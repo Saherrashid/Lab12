@@ -11,4 +11,6 @@
     <string name="back">Button</string>
     <string name="goback">BACK</string>
     <string name="textview">TextView</string>
+    <string name="enter_word">Enter Word</string>
+    <string name="button">(Button)</string>
 </resources>
