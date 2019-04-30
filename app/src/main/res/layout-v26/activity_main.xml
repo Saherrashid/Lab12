@@ -37,10 +37,10 @@
             android:id="@+id/editText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints=""
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@string/enter_your_word"
-            android:autofillHints="" />
+            android:hint="Enter Your Word"
+            android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/searcher"
