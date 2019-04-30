@@ -39,10 +39,10 @@ public class MainActivity extends AppCompatActivity {
                 Request request = new Request(this, textView, input);
                 url = dictionaryEntries(input);
                 request.execute(url);
-                findViewById(R.id.searcher).setOnClickListener(v -> {
-                    Vibrator z = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                    z.vibrate(500);
-                });
+//                findViewById(R.id.searcher).setOnClickListener(v -> {
+//                    Vibrator z = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+//                    z.vibrate(500);
+//                });
             }
 
 
