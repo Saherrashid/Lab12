@@ -1,11 +1,14 @@
 package edu.illinois.cs.cs125.spring2019.lab12;
 
+import android.content.Context;
+import android.os.VibrationEffect;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.os.Vibrator;
 
 
 
@@ -29,7 +32,12 @@ public class MainActivity extends AppCompatActivity {
         button = findViewById(R.id.searcher);
         editText = findViewById(R.id.editText);
         textView = findViewById(R.id.textview);
+        findViewById(R.id.searcher).setOnClickListener(v -> {
+            Vibrator z = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            z.vibrate(500);
+        });
     }
+
             public void onClick(View view) {
                 String input = editText.getText().toString();
                 Request request = new Request(this, textView, input);
