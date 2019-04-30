@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Pocket Dictionary"
+        android:text="@string/pocket_dictionary"
         android:textAllCaps="false"
         android:textColor="@color/colorPrimary"
         android:textSize="30sp"
