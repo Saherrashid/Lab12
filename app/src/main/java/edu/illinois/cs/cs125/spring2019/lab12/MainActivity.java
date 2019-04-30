@@ -1,10 +1,17 @@
 package edu.illinois.cs.cs125.spring2019.lab12;
 
+import android.content.Context;
+import android.os.AsyncTask;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
+import edu.illinois.cs.cs125.spring2019.lab12.Country;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -12,12 +19,16 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.gson.JsonObject;
+
 
 import org.json.JSONException;
 import org.json.JSONObject;
-//import com.google.gson.JsonArray;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+
+import java.io.IOException;
+
+import okhttp3.OkHttpClient;
+import android.os.Vibrator;
 
 
 /**
@@ -38,34 +49,56 @@ public final class MainActivity extends AppCompatActivity {
     //@Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        findViewById(R.id.Lookup_address).setOnClickListener(v -> {
-//            startAPICall("192.17.96.8");
-//        });
-//
-//        // Set up the queue for our API requests
-//        requestQueue = Volley.newRequestQueue(this);
-        EditText input = (EditText) findViewById(R.id.searchbox);
-        String inputName = input.getText().toString();
+        requestQueue = Volley.newRequestQueue(this);
         setContentView(R.layout.activity_main);
-
+//        Button searcher = findViewById(R.id.searcher);
+//        final TextView textView = findViewById(R.id.searchbox);
+//
+//        searcher.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(final View view) {
+//                AsyncTask asyncTask = new AsyncTask() {
+//                    @Override
+//                    protected Object doInBackground(final Object[] objects) {
+//                        OkHttpClient client = new OkHttpClient();
+//                        Request request = new Request.Builder()
+//                                .url("https://restcountries-v1.p.rapidapi.com/name/" +)
+//                                .build();
+//                        Response response = null;
+//                        try {
+//                            response = client.newCall(request)/execute();
+//                            return response.body().string();
+//                        }catch (IOException e) {
+//                            e.printStackTrace();
+//                        }
+//
+//                        return null;
+//                    }
+//                    @Override
+//                    protected void onPostExecute(final Object o) {
+//                        textView.setText(o.toString());
+//                    }
+//                }.execute();
+//            }
         findViewById(R.id.searcher).setOnClickListener(v -> {
+            EditText input = findViewById(R.id.searchbox);
+            String inputName = input.getText().toString();
+            startAPICall(inputName);
             findViewById(R.id.searcher).setVisibility(View.GONE);
             findViewById(R.id.again).setVisibility(View.VISIBLE);
             findViewById(R.id.flag).setVisibility(View.INVISIBLE);
             findViewById(R.id.Back).setVisibility(View.VISIBLE);
-            findViewById(R.id.information).setVisibility(View.VISIBLE);
+            Vibrator a = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+            a.vibrate(500);
         });
         findViewById(R.id.Back).setOnClickListener(v -> {
             findViewById(R.id.searcher).setVisibility(View.VISIBLE);
             findViewById(R.id.again).setVisibility(View.GONE);
             findViewById(R.id.flag).setVisibility(View.VISIBLE);
             findViewById(R.id.Back).setVisibility(View.GONE);
-            findViewById(R.id.information).setVisibility(View.GONE);
         });
 
 
-
-        //startAPICall("192.17.96.8");
     }
     /**
      * Run when this activity is no longer visible.
@@ -78,13 +111,14 @@ public final class MainActivity extends AppCompatActivity {
     /**
      * Make a call to the IP geolocation API.
      *
-     * @param ipAddress IP address to look up
+     * @param inputName IP address to look up
      */
-    void startAPICall(final String ipAddress) {
+
+    void startAPICall(final String inputName) {
         try {
             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                     Request.Method.GET,
-                    "https://ipinfo.io/" + ipAddress + "/json",
+                    "https://restcountries-v1.p.rapidapi.com/name/" + inputName,
                     null,
                     new Response.Listener<JSONObject>() {
                         @Override

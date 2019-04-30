@@ -6,25 +6,20 @@
     android:layout_height="match_parent"
     xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:backgroundTint="@color/colorAccent">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="428dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="@string/the_country_s_almanac"
         android:textAllCaps="false"
         android:textColor="@color/colorPrimary"
         android:textSize="30sp"
         android:textStyle="bold"
         android:visibility="visible" />
-
-    <TextView
-        android:id="@+id/information"
-        android:layout_width="453dp"
-        android:layout_height="389dp"
-        android:text="@string/textview"
-        android:visibility="gone" />
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/flag"
@@ -37,6 +32,13 @@
         android:layout_width="match_parent"
         android:layout_height="421dp"
         android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:text="@string/textview"
+            tools:visibility="visible" />
 
         <Button
             android:id="@+id/searcher"
@@ -55,7 +57,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="264dp"
             android:orientation="horizontal">
 
             <Button

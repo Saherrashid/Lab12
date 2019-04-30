@@ -27,7 +27,7 @@ public final class Country extends java.lang.Object {
 
     /**
      * capital.
-     * @param json
+     * @param json mam
      * @return capital
      */
     public static String getCapital(final java.lang.String json) {
