@@ -35,10 +35,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
             public void onClick(View view) {
-                findViewById(R.id.searcher).setOnClickListener(v -> {
-                    Vibrator z = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-                    z.vibrate(500);
-                });
                 String input = editText.getText().toString();
                 Request request = new Request(this, textView, input);
                 url = dictionaryEntries(input);
