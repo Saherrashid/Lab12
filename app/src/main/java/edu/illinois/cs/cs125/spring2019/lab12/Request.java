@@ -110,10 +110,11 @@ public class Request extends AsyncTask<String, Integer, String> {
             JSONArray de = d.getJSONArray("definitions");
 
             definition = de.getString(0);
-            if (definition != null) {
+            if (definition == null) {
+                textView.setText("Definition Is Not Available")
                 textView.setText(input.toUpperCase() + "-" + definition);
             } else {
-                textView.setText("Definition Is Not Available");
+                textView.setText(input.toUpperCase() + "-" + definition);
             }
 
         } catch (JSONException e)  {
