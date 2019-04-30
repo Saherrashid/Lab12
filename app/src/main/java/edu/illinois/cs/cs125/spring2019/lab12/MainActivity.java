@@ -12,7 +12,7 @@ import android.widget.TextView;
 /**
  * Main class for our UI design lab.
  */
-public final class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
     /**
      * Default logging tag for messages from the main activity.
      */
@@ -26,16 +26,16 @@ public final class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        button = (Button) findViewById(R.id.searcher);
-        editText = (EditText) findViewById(R.id.searchbox);
-        textView = (TextView) findViewById(R.id.textview);
+        button = findViewById(R.id.searcher);
+        editText = findViewById(R.id.editText);
+        textView = findViewById(R.id.textview);
     }
-    public void onClick(final View view) {
-        String input = editText.getText().toString();
-        Request request = new Request(this, textView, input);
-        url = dictionaryEntries(input);
-        request.execute(url);
-    }
+            public void onClick(final View view) {
+                String input = editText.getText().toString();
+                Request request = new Request(this, textView, input);
+                url = dictionaryEntries(input);
+                request.execute(url);
+            }
 
     private String dictionaryEntries(final String input) {
         final String word = input;
