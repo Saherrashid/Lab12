@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Default logging tag for messages from the main activity.
      */
-    String url;
+    String caller;
     EditText editText;
     Button button;
     TextView textView;
@@ -37,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String input = editText.getText().toString();
                 Request request = new Request(this, textView, input);
-                url = dictionaryEntries(input);
-                request.execute(url);
+                caller = dictionaryEntries(input);
+                request.execute(caller;
                 findViewById(R.id.searcher).setOnClickListener(v -> {
                     Vibrator z = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
                     z.vibrate(500);
