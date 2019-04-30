@@ -32,10 +32,6 @@ public class MainActivity extends AppCompatActivity {
         button = findViewById(R.id.searcher);
         editText = findViewById(R.id.editText);
         textView = findViewById(R.id.textview);
-//        findViewById(R.id.searcher).setOnClickListener(v -> {
-//            Vibrator z = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-//            z.vibrate(500);
-//        });
     }
 
             public void onClick(View view) {
@@ -43,7 +39,12 @@ public class MainActivity extends AppCompatActivity {
                 Request request = new Request(this, textView, input);
                 url = dictionaryEntries(input);
                 request.execute(url);
+                findViewById(R.id.searcher).setOnClickListener(v -> {
+                    Vibrator z = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+                    z.vibrate(500);
+                });
             }
+
 
     private String dictionaryEntries(final String input) {
         final String word = input;
