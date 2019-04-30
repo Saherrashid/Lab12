@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         editText = findViewById(R.id.editText);
         textView = findViewById(R.id.textview);
     }
-            public void onClick(final View view) {
+            public void onClick(View view) {
                 String input = editText.getText().toString();
                 Request request = new Request(this, textView, input);
                 url = dictionaryEntries(input);
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private String dictionaryEntries(final String input) {
         final String word = input;
         final String wordId = word.toLowerCase();
-        return "https://od-api.oxforddictionaries.com:443/api/v2/entries/en/" + wordId;
+        return "https://od-api.oxforddictionaries.com:443/api/v2/entries/en-us/" + wordId;
     }
 
 }
