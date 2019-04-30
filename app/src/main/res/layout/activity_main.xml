@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="@string/the_country_s_almanac"
+        android:text="Pocket Dictionary"
         android:textAllCaps="false"
         android:textColor="@color/colorPrimary"
         android:textSize="30sp"
@@ -22,10 +22,10 @@
         android:visibility="visible" />
 
     <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/flag"
+        android:id="@+id/bookturn"
         android:layout_width="match_parent"
         android:layout_height="324dp"
-        android:src="@drawable/flag"
+        android:src="@drawable/bookturn"
         android:visibility="visible" />
 
     <android.support.design.widget.TextInputLayout
