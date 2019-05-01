@@ -35,7 +35,7 @@ public class Request extends AsyncTask<String, Integer, String> {
     /**
      * input.
      */
-    String input;
+    String phrase;
 
 
     /**
@@ -47,7 +47,7 @@ public class Request extends AsyncTask<String, Integer, String> {
     Request(Context context, TextView textView, String words) {
         this.context = context;
         this.textView = textView;
-        this.input = words;
+        this.phrase = words;
     }
 
 
@@ -110,11 +110,7 @@ public class Request extends AsyncTask<String, Integer, String> {
             JSONArray de = d.getJSONArray("definitions");
 
             definition = de.getString(0);
-            if (definition == null) {
-                textView.setText("Definition Is Not Available");
-            } else {
-                textView.setText(input.toUpperCase() + "-" + definition);
-            }
+            textView.setText(phrase.toUpperCase() + "-" + definition);
 
         } catch (JSONException e)  {
             e.printStackTrace();

@@ -29,15 +29,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        button = findViewById(R.id.searcher);
         editText = findViewById(R.id.editText);
         textView = findViewById(R.id.textview);
+        button = findViewById(R.id.searcher);
     }
 
             public void onClick(View view) {
-                String input = editText.getText().toString();
-                Request request = new Request(this, textView, input);
-                url = dictionaryEntries(input);
+                String phrase = editText.getText().toString();
+                Request request = new Request(this, textView, phrase);
+                url = dictionaryEntries(phrase);
                 request.execute(url);
             }
 
